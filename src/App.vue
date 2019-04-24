@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div>{{ message }}</div>
+    <TodoPanel/>
     <router-view/>
   </div>
 </template>
@@ -8,10 +9,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
-import TodoPanel from '@/components/TodoPanel';
-
 @Component
-export default class TodoPanel extends Vue {
+export default class App extends Vue {
   private message: string = 'Vue.ts TODO';
 }
 </script>
