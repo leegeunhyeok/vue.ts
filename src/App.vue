@@ -33,5 +33,6 @@ export default class App extends Vue {
 
 .title {
   margin-top: 4rem;
+  color: #42b983;
 }
 </style>
