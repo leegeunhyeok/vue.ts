@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div>{{ message }}</div>
-    <TodoPanel/>
     <router-view/>
   </div>
 </template>
