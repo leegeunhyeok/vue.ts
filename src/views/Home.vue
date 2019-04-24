@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import TodoPanel from '@/components/TodoPanel.vue'; // @ is an alias to /src
+import TodoPanel from '@/components/TodoPanel.vue';
 
 @Component({
   components: {
