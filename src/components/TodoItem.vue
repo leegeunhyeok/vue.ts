@@ -12,15 +12,12 @@ export default class TodoItem extends Vue {
 </script>
 
 <style scoped>
-.todo-panel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 1rem;
-  -webkit-transform: translate(-50%, -50%);
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-       -o-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.todo-item {
+  width: 100%;
+  text-align: left;
+  padding: .4rem .8rem;
+  margin: 5px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
 }
 </style>
