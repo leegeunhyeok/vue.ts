@@ -1,5 +1,7 @@
 <template>
-  <div class="todo-item">{{ data }}</div>
+  <div class="todo-item"
+    @dblclick="updateItem"
+  >{{ data }}</div>
 </template>
 
 <script lang="ts">
@@ -8,6 +10,10 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class TodoItem extends Vue {
   @Prop() private data!: string;
+
+  private updateItem(): void {
+    alert('Update!');
+  }
 }
 </script>
 
