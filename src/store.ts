@@ -11,7 +11,7 @@ export default new Vuex.Store({
   },
   mutations: {
     addItem({ todoData }, item: string): void {
-      todoData.push(item);
+      todoData.unshift(item);
     },
     removeItem({ todoData }, target: string): void {
       const targetIndex = todoData.indexOf(target);
