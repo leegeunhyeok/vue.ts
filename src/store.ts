@@ -10,14 +10,20 @@ export default new Vuex.Store({
     todoData: new Array<string>(),
   },
   mutations: {
-    addItem({ todoData }, item: string): void {
-      todoData.push(item);
+    addItem(state, item: string): void {
+      state.todoData.push(item);
     },
-    removeItem({ todoData }, target: string): void {
-      todoData.splice(todoData.indexOf(target), 1);
+    removeItem(state, target: string): void {
+      const targetIndex = state.todoData.indexOf(target);
+      if (targetIndex !== -1) {
+        state.todoData.splice(targetIndex, 1);
+      }
     },
-    updateItem({ todoData }, { target, update }): void {
-      todoData[todoData.indexOf(target)] = update;
+    updateItem(state, { target, update }): void {
+      const targetIndex = state.todoData.indexOf(target);
+      if (targetIndex !== -1) {
+        state.todoData[targetIndex] = update;
+      }
     },
   },
   actions: {
