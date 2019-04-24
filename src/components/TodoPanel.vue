@@ -34,6 +34,7 @@ export default class TodoPanel extends Vue {
   private addItem(): void {
     if (this.text) {
       this.$store.commit('addItem', this.text);
+      this.$store.dispatch('saveData');
       this.text = '';
     }
   }
