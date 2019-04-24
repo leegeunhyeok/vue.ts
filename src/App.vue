@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>{{ message }}</div>
+    <h1 class="title">{{ message }}</h1>
     <router-view/>
   </div>
 </template>
@@ -29,5 +29,9 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.title {
+  margin-top: 4rem;
 }
 </style>
