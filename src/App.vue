@@ -8,13 +8,11 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
+import TodoPanel from '@/components/TodoPanel';
+
 @Component
 export default class TodoPanel extends Vue {
-  public data(): any {
-    return {
-      message: 'Vue.ts TODO',
-    };
-  }
+  private message: string = 'Vue.ts TODO';
 }
 </script>
 
