@@ -11,6 +11,10 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class App extends Vue {
   private message: string = 'Vue.ts TODO';
+
+  private created() {
+    this.$store.dispatch('loadData');
+  }
 }
 </script>
 

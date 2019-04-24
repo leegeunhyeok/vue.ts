@@ -10,24 +10,24 @@ export default new Vuex.Store({
     todoData: new Array<string>(),
   },
   mutations: {
-    addItem(state, item: string): void {
-      state.todoData.push(item);
+    addItem({ todoData }, item: string): void {
+      todoData.push(item);
     },
-    removeItem(state, target: string): void {
-      const targetIndex = state.todoData.indexOf(target);
+    removeItem({ todoData }, target: string): void {
+      const targetIndex = todoData.indexOf(target);
       if (targetIndex !== -1) {
-        state.todoData.splice(targetIndex, 1);
+        todoData.splice(targetIndex, 1);
       }
     },
-    updateItem(state, { target, update }): void {
-      const targetIndex = state.todoData.indexOf(target);
+    updateItem({ todoData }, { target, update }): void {
+      const targetIndex = todoData.indexOf(target);
       if (targetIndex !== -1) {
-        state.todoData[targetIndex] = update;
+        todoData[targetIndex] = update;
       }
     },
   },
   actions: {
-    loadData({ commit }): void {
+    loadData({ commit, dispatch }): void {
       try {
         const data: any = localStorage.getItem(STORAGE_KEY);
         JSON.parse(data).forEach((item: string) => {
@@ -35,6 +35,7 @@ export default new Vuex.Store({
         });
       } catch (e) {
         commit('addItem', 'Hello!');
+        dispatch('saveData');
       }
     },
     saveData({ state }): void {
